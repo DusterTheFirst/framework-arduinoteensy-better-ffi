@@ -1224,7 +1224,7 @@ extern "C" {
 
 void digitalWrite(uint8_t pin, uint8_t val);
 static inline void digitalWriteFast(uint8_t pin, uint8_t val) __attribute__((always_inline, unused));
-extern "C" static inline void digitalWriteFast(uint8_t pin, uint8_t val)
+static inline void digitalWriteFast(uint8_t pin, uint8_t val)
 {
 	if (__builtin_constant_p(pin)) {
 		if (val) {
@@ -1464,7 +1464,7 @@ extern "C" static inline void digitalWriteFast(uint8_t pin, uint8_t val)
 
 uint8_t digitalRead(uint8_t pin);
 static inline uint8_t digitalReadFast(uint8_t pin) __attribute__((always_inline, unused));
-extern "C" static inline uint8_t digitalReadFast(uint8_t pin)
+static inline uint8_t digitalReadFast(uint8_t pin)
 {
 	if (__builtin_constant_p(pin)) {
 		if (pin == 0) {
@@ -1589,7 +1589,7 @@ extern "C" static inline uint8_t digitalReadFast(uint8_t pin)
 
 void digitalToggle(uint8_t pin);
 static inline void digitalToggleFast(uint8_t pin) __attribute__((always_inline, unused));
-extern "C" static inline void digitalToggleFast(uint8_t pin)
+static inline void digitalToggleFast(uint8_t pin)
 {
 	if (__builtin_constant_p(pin)) {
 		if (pin == 0) {
